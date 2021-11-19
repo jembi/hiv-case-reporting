@@ -1,0 +1,6 @@
+{
+  "id": "hiv-case-reporting",
+  "name": "Hiv case reporting package",
+  "version": "v0.1.0",
+  "dependencies": ["client", "elastic-pipeline"]
+}
