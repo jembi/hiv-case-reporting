@@ -1,0 +1,189 @@
+{
+  "aliases": {
+    "fhir-report-patient-by-hiv": {},
+    "fhir-report-patient-by-art": {},
+    "fhir-report-patient-by-curr-vl": {},
+    "fhir-report-patient-by-death": {}
+  },
+  "mappings": {
+    "runtime": {
+      "death.ageAtDeath": {
+        "type": "long",
+        "script": {
+          "source": "if (doc['registration.birthDate'].size()==0 || doc['death.date'].size()==0) { return } ZonedDateTime birthDate = doc['registration.birthDate'].value; ZonedDateTime deathDate = doc['death.date'].value; emit(birthDate.until(deathDate, ChronoUnit.YEARS));"
+        }
+      }
+    },
+    "properties": {
+      "@timestamp": { "type": "date" },
+      "artInitiation": {
+        "properties": {
+          "date": { "type": "date" },
+          "line": { "type": "keyword" },
+          "regimen": { "type": "keyword" }
+        }
+      },
+      "artRegimenSwitch": {
+        "properties": {
+          "nested": {
+            "type": "nested",
+            "properties": {
+              "date": { "type": "date" },
+              "line": { "type": "keyword" },
+              "regimen": { "type": "keyword" }
+            }
+          },
+          "initial": {
+            "properties": {
+              "date": { "type": "date" },
+              "line": { "type": "keyword" },
+              "regimen": { "type": "keyword" }
+            }
+          },
+          "current": {
+            "properties": {
+              "date": { "type": "date" },
+              "line": { "type": "keyword" },
+              "regimen": { "type": "keyword" }
+            }
+          }
+        }
+      },
+      "cd4": {
+        "properties": {
+          "nested": {
+            "type": "nested",
+            "properties": {
+              "collectionDate": { "type": "date" },
+              "percentage": { "type": "long" },
+              "result": { "type": "long" }
+            }
+          },
+          "initial": {
+            "properties": {
+              "collectionDate": { "type": "date" },
+              "percentage": { "type": "long" },
+              "result": { "type": "long" }
+            }
+          },
+          "current": {
+            "properties": {
+              "collectionDate": { "type": "date" },
+              "percentage": { "type": "long" },
+              "result": { "type": "long" }
+            }
+          }
+        }
+      },
+      "death": {
+        "properties": {
+          "date": { "type": "date" },
+          "ageAtDeath": { "type": "integer" },
+          "dateOfLastVisit": { "type": "date" },
+          "cause": { "type": "keyword" }
+        }
+      },
+      "entryToCare": {
+        "properties": {
+          "UID": { "type": "keyword" },
+          "dateOfFirstClinicalVisit": { "type": "date" },
+          "enrollmentDate": { "type": "date" },
+          "facilityCode": { "type": "keyword" },
+          "facility": {
+            "properties": {
+              "city": { "type": "keyword" },
+              "country": { "type": "keyword" },
+              "district": { "type": "keyword" },
+              "state": { "type": "keyword" },
+              "name": { "type": "keyword" },
+              "position": { "type": "geo_point" }
+            }
+          }
+        }
+      },
+      "hivDiagnosis": {
+        "properties": {
+          "hivPosDate": { "type": "date" },
+          "hivPosFacilityCode": { "type": "keyword" },
+          "hivPosUID": { "type": "keyword" },
+          "recencyStatus": { "type": "keyword" },
+          "recencyTestConducted": { "type": "keyword" },
+          "facility": {
+            "properties": {
+              "city": { "type": "keyword" },
+              "country": { "type": "keyword" },
+              "district": { "type": "keyword" },
+              "state": { "type": "keyword" },
+              "name": { "type": "keyword" },
+              "position": { "type": "geo_point" }
+            }
+          }
+        }
+      },
+      "registration": {
+        "properties": {
+          "NID": { "type": "keyword" },
+          "address": {
+            "properties": {
+              "city": { "type": "keyword" },
+              "country": { "type": "keyword" },
+              "district": { "type": "keyword" },
+              "state": { "type": "keyword" }
+            }
+          },
+          "birthDate": { "type": "date" },
+          "clientSourceId": { "type": "keyword" },
+          "facility": {
+            "properties": {
+              "city": { "type": "keyword" },
+              "country": { "type": "keyword" },
+              "district": { "type": "keyword" },
+              "state": { "type": "keyword" },
+              "name": { "type": "keyword" },
+              "position": { "type": "geo_point" }
+            }
+          },
+          "facilityCode": { "type": "keyword" },
+          "firstName": { "type": "keyword" },
+          "gender": { "type": "keyword" },
+          "golden_id_fingerprint": { "type": "keyword" },
+          "guardianName": { "type": "keyword" },
+          "keyPopulationStatus": { "type": "keyword" },
+          "lastName": { "type": "keyword" },
+          "tel": { "type": "keyword" },
+          "maritalStatus": { "type": "keyword" }
+        }
+      },
+      "viralSuppression": {
+        "properties": {
+          "currentStatus": { "type": "keyword" },
+          "nested": {
+            "type": "nested",
+            "properties": {
+              "date": { "type": "date" },
+              "interpretation": { "type": "keyword" },
+              "result": { "type": "keyword" },
+              "currentStatus": { "type": "keyword" }
+            }
+          },
+          "initial": {
+            "properties": {
+              "date": { "type": "date" },
+              "interpretation": { "type": "keyword" },
+              "result": { "type": "keyword" },
+              "currentStatus": { "type": "keyword" }
+            }
+          },
+          "current": {
+            "properties": {
+              "date": { "type": "date" },
+              "interpretation": { "type": "keyword" },
+              "result": { "type": "keyword" },
+              "currentStatus": { "type": "keyword" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
