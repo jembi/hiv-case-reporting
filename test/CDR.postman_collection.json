@@ -1,0 +1,731 @@
+{
+	"info": {
+		"_postman_id": "3dd766e6-6d45-45d5-9e98-f50861d7185d",
+		"name": "DISI CDR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bootstrap",
+			"item": [
+				{
+					"name": "Organizations",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/fhir+json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Custom test"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Bundle\",\r\n  \"type\": \"transaction\",\r\n  \"entry\": [\r\n    {\r\n      \"resource\": {\r\n        \"resourceType\": \"Organization\",\r\n        \"id\": \"HIVOrganizationExample\",\r\n        \"meta\": {\r\n          \"profile\": [\r\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-organization\"\r\n          ]\r\n        },\r\n        \"address\": [\r\n          {\r\n            \"country\": \"DISI country\",\r\n            \"state\": \"DISI state 1\",\r\n            \"district\": \"DISI district 1\",\r\n            \"city\": \"DISI city 1\",\r\n            \"line\": [\r\n              \"DISI line 1\",\r\n              \"DISI line 2\",\r\n              \"DISI line 3\"\r\n            ],\r\n            \"postalCode\": \"DISI postal code\"\r\n          }\r\n        ],\r\n        \"name\": \"HIV Organization\",\r\n        \"identifier\": [\r\n          {\r\n            \"system\": \"http://test.org/identifier/hiv-organization\",\r\n            \"value\": \"facility1\"\r\n          }\r\n        ]\r\n      },\r\n      \"request\": {\r\n        \"method\": \"PUT\",\r\n        \"url\": \"Organization/HIVOrganizationExample\"\r\n      }\r\n    },\r\n    {\r\n      \"resource\": {\r\n        \"resourceType\": \"Organization\",\r\n        \"id\": \"HIVOrganizationExample2\",\r\n        \"meta\": {\r\n          \"profile\": [\r\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-organization\"\r\n          ]\r\n        },\r\n        \"address\": [\r\n          {\r\n            \"country\": \"DISI country\",\r\n            \"state\": \"DISI state 1\",\r\n            \"district\": \"DISI district 2\",\r\n            \"city\": \"DISI city 2\",\r\n            \"line\": [\r\n              \"DISI line 1\",\r\n              \"DISI line 2\",\r\n              \"DISI line 3\"\r\n            ],\r\n            \"postalCode\": \"DISI postal code 2\"\r\n          }\r\n        ],\r\n        \"name\": \"HIV Organization 2\",\r\n        \"identifier\": [\r\n          {\r\n            \"system\": \"http://test.org/identifier/hiv-organization\",\r\n            \"value\": \"facility2\"\r\n          }\r\n        ]\r\n      },\r\n      \"request\": {\r\n        \"method\": \"PUT\",\r\n        \"url\": \"Organization/HIVOrganizationExample2\"\r\n      }\r\n    },\r\n    {\r\n      \"resource\": {\r\n        \"resourceType\": \"Organization\",\r\n        \"id\": \"HIVOrganizationExample3\",\r\n        \"meta\": {\r\n          \"profile\": [\r\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-organization\"\r\n          ]\r\n        },\r\n        \"address\": [\r\n          {\r\n            \"country\": \"DISI country\",\r\n            \"state\": \"DISI state 2\",\r\n            \"district\": \"DISI district 3\",\r\n            \"city\": \"DISI city 3\",\r\n            \"line\": [\r\n              \"DISI line 1\",\r\n              \"DISI line 2\",\r\n              \"DISI line 3\"\r\n            ],\r\n            \"postalCode\": \"DISI postal code 3\"\r\n          }\r\n        ],\r\n        \"name\": \"HIV Organization 3\",\r\n        \"identifier\": [\r\n          {\r\n            \"system\": \"http://test.org/identifier/hiv-organization\",\r\n            \"value\": \"facility3\"\r\n          }\r\n        ]\r\n      },\r\n      \"request\": {\r\n        \"method\": \"PUT\",\r\n        \"url\": \"Organization/HIVOrganizationExample3\"\r\n      }\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "http://{{openhimHost}}/fhir/",
+							"protocol": "http",
+							"host": [
+								"{{openhimHost}}"
+							],
+							"path": [
+								"fhir",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Locations",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/fhir+json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Custom test"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Bundle\",\r\n  \"type\": \"transaction\",\r\n  \"entry\": [\r\n    {\r\n      \"resource\": {\r\n        \"resourceType\": \"Location\",\r\n        \"id\": \"HIVLocationExample\",\r\n        \"meta\": {\r\n          \"profile\": [\r\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-Location\"\r\n          ]\r\n        },\r\n        \"address\": [\r\n          {\r\n            \"country\": \"DISI country\",\r\n            \"state\": \"DISI state 1\",\r\n            \"district\": \"DISI district 1\",\r\n            \"city\": \"DISI city 1\",\r\n            \"line\": [\r\n              \"DISI line 1\",\r\n              \"DISI line 2\",\r\n              \"DISI line 3\"\r\n            ],\r\n            \"postalCode\": \"DISI postal code\"\r\n          }\r\n        ],\r\n        \"name\": \"HIV Location\",\r\n        \"identifier\": [\r\n          {\r\n            \"system\": \"http://test.org/identifier/hiv-Location\",\r\n            \"value\": \"facility1\"\r\n          }\r\n        ],\r\n        \"position\": {\r\n          \"longitude\": 24.1,\r\n          \"latitude\": -30\r\n        }\r\n      },\r\n      \"request\": {\r\n        \"method\": \"PUT\",\r\n        \"url\": \"Location/HIVLocationExample\"\r\n      }\r\n    },\r\n    {\r\n      \"resource\": {\r\n        \"resourceType\": \"Location\",\r\n        \"id\": \"HIVLocationExample2\",\r\n        \"meta\": {\r\n          \"profile\": [\r\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-Location\"\r\n          ]\r\n        },\r\n        \"address\": [\r\n          {\r\n            \"country\": \"DISI country\",\r\n            \"state\": \"DISI state 1\",\r\n            \"district\": \"DISI district 2\",\r\n            \"city\": \"DISI city 2\",\r\n            \"line\": [\r\n              \"DISI line 1\",\r\n              \"DISI line 2\",\r\n              \"DISI line 3\"\r\n            ],\r\n            \"postalCode\": \"DISI postal code 2\"\r\n          }\r\n        ],\r\n        \"name\": \"HIV Location 2\",\r\n        \"identifier\": [\r\n          {\r\n            \"system\": \"http://test.org/identifier/hiv-Location\",\r\n            \"value\": \"facility2\"\r\n          }\r\n        ],\r\n        \"position\": {\r\n          \"longitude\": 24,\r\n          \"latitude\": -30.1\r\n        }\r\n      },\r\n      \"request\": {\r\n        \"method\": \"PUT\",\r\n        \"url\": \"Location/HIVLocationExample2\"\r\n      }\r\n    },\r\n    {\r\n      \"resource\": {\r\n        \"resourceType\": \"Location\",\r\n        \"id\": \"HIVLocationExample3\",\r\n        \"meta\": {\r\n          \"profile\": [\r\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-Location\"\r\n          ]\r\n        },\r\n        \"address\": [\r\n          {\r\n            \"country\": \"DISI country\",\r\n            \"state\": \"DISI state 2\",\r\n            \"district\": \"DISI district 3\",\r\n            \"city\": \"DISI city 3\",\r\n            \"line\": [\r\n              \"DISI line 1\",\r\n              \"DISI line 2\",\r\n              \"DISI line 3\"\r\n            ],\r\n            \"postalCode\": \"DISI postal code 3\"\r\n          }\r\n        ],\r\n        \"name\": \"HIV Location 3\",\r\n        \"identifier\": [\r\n          {\r\n            \"system\": \"http://test.org/identifier/hiv-Location\",\r\n            \"value\": \"facility3\"\r\n          }\r\n        ],\r\n        \"position\": {\r\n          \"longitude\": 24.1,\r\n          \"latitude\": -30.1\r\n        }\r\n      },\r\n      \"request\": {\r\n        \"method\": \"PUT\",\r\n        \"url\": \"Location/HIVLocationExample3\"\r\n      }\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "http://{{openhimHost}}/fhir/",
+							"protocol": "http",
+							"host": [
+								"{{openhimHost}}"
+							],
+							"path": [
+								"fhir",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MPI interactions",
+			"item": [
+				{
+					"name": "Register random patient",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/fhir+json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Custom test"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Patient\",\n  \"meta\": {\n    \"profile\": [\n      \"http://openhie.org/fhir/StructureDefinition/hiv-patient\"\n    ]\n  },\n  \"identifier\": [\n    {\n      \"system\": \"https://instantopenhie.org/client{{randomClientId}}\",\n      \"value\": \"{{$guid}}\"\n    }\n  ],\n  \"active\": true,\n  \"name\": [\n    {\n      \"use\": \"official\",\n      \"given\": [\n        \"{{$randomFirstName}}\"\n      ],\n      \"family\": \"{{$randomLastName}}\"\n    }\n  ],\n  \"gender\": \"{{gender}}\",\n  \"birthDate\": \"{{birthDate}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{openhimHost}}/client/Patient",
+							"protocol": "http",
+							"host": [
+								"{{openhimHost}}"
+							],
+							"path": [
+								"client",
+								"Patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register duplicate patient - facility 1",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/fhir+json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Custom test"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Patient\",\n  \"meta\": {\n    \"profile\": [\n      \"http://openhie.org/fhir/StructureDefinition/hiv-patient\"\n    ]\n  },\n  \"identifier\": [\n    {\n      \"system\": \"https://instantopenhie.org/client1\",\n      \"value\": \"{{$guid}}\"\n    }\n  ],\n  \"active\": true,\n  \"name\": [\n    {\n      \"use\": \"official\",\n      \"given\": [\n        \"Jane\"\n      ],\n      \"family\": \"Smith\"\n    }\n  ],\n  \"gender\": \"female\",\n  \"birthDate\": \"1986-06-04\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{openhimHost}}/client/Patient",
+							"protocol": "http",
+							"host": [
+								"{{openhimHost}}"
+							],
+							"path": [
+								"client",
+								"Patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register duplicate patient - facility 2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/fhir+json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Custom test"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Patient\",\n  \"meta\": {\n    \"profile\": [\n      \"http://openhie.org/fhir/StructureDefinition/hiv-patient\"\n    ]\n  },\n  \"identifier\": [\n    {\n      \"system\": \"https://instantopenhie.org/client2\",\n      \"value\": \"{{$guid}}\"\n    }\n  ],\n  \"active\": true,\n  \"name\": [\n    {\n      \"use\": \"official\",\n      \"given\": [\n        \"Jaane\"\n      ],\n      \"family\": \"Smiith\"\n    }\n  ],\n  \"gender\": \"female\",\n  \"birthDate\": \"1986-06-04\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{openhimHost}}/client/Patient",
+							"protocol": "http",
+							"host": [
+								"{{openhimHost}}"
+							],
+							"path": [
+								"client",
+								"Patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register duplicate patient - facility 3 - (manual link)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/fhir+json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Custom test"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Patient\",\n  \"meta\": {\n    \"profile\": [\n      \"http://openhie.org/fhir/StructureDefinition/hiv-patient\"\n    ]\n  },\n  \"identifier\": [\n    {\n      \"system\": \"https://instantopenhie.org/client3\",\n      \"value\": \"{{$guid}}\"\n    }\n  ],\n  \"active\": true,\n  \"name\": [\n    {\n      \"use\": \"official\",\n      \"given\": [\n        \"Jan\"\n      ],\n      \"family\": \"Smthxxyz\"\n    }\n  ],\n  \"gender\": \"female\",\n  \"birthDate\": \"1986-06-04\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{openhimHost}}/client/Patient",
+							"protocol": "http",
+							"host": [
+								"{{openhimHost}}"
+							],
+							"path": [
+								"client",
+								"Patient"
+							]
+						},
+						"description": "Will create a patient that needs manual action to be matched with other patients from the request above in OpenCR."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Submit bundle",
+			"item": [
+				{
+					"name": "Submit random bundle - full",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/fhir+json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Custom test",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Bundle\",\n  \"id\": \"HIVBundleExample\",\n  \"type\": \"document\",\n  \"entry\": [\n    {\n      \"fullUrl\": \"Composition/HIVCompositionExample\",\n      \"resource\": {\n        \"resourceType\": \"Composition\",\n        \"id\": \"HIVCompositionExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-composition\"\n          ]\n        },\n        \"type\": {\n          \"coding\": [\n            {\n              \"code\": \"95412-3\",\n              \"system\": \"http://loinc.org\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"identifier\": {\n          \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/hiv-case-report\",\n          \"value\": \"{{$guid}}\"\n        },\n        \"date\": \"2021-05-18\",\n        \"author\": [\n          {\n            \"reference\": \"Organization/{{orgId}}\"\n          }\n        ],\n        \"title\": \"HIV Case Report\",\n        \"section\": [\n          {\n            \"title\": \"Client registration\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"CLIENT-REGISTRATION\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Patient/HIVPatientExample\"\n              },\n              {\n                \"reference\": \"RelatedPerson/GuardianExample\"\n              }\n            ]\n          },\n          {\n            \"title\": \"HIV Diagnosis\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"HIV-DIAGNOSIS\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Condition/HIVDiagnosisExample\"\n              },\n              {\n                \"reference\": \"Encounter/HIVDiagnosisEncounterExample\"\n              },\n              {\n                \"reference\": \"Observation/HIVRecencyTestConductedExample\"\n              },\n              {\n                \"reference\": \"Observation/HIVRecencyResultExample\"\n              }\n            ]\n          },\n          {\n            \"title\": \"HIV Entry To Care\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"HIV-ENTRY-TO-CARE\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"EpisodeOfCare/HIVEpisodeOfCareExample\"\n              },\n              {\n                \"reference\": \"Encounter/HIVClinicalEncounterExample\"\n              }\n            ]\n          },\n          {\n            \"title\": \"ARV Treatment\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"arvTherapySummary\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"CarePlan/ARVTreatmentExample1\"\n              },\n              {\n                \"reference\": \"CarePlan/ARVTreatmentExample2\"\n              }\n            ]\n          },\n          {\n            \"title\": \"CD4\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"CD4\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Observation/CD4Example1\"\n              },\n              {\n                \"reference\": \"Observation/CD4Example2\"\n              }\n            ]\n          },\n          {\n            \"title\": \"Viral Suppression\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"VIRAL-SUPPRESSION\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Observation/ViralLoadSuppressionExample1\"\n              },\n              {\n                \"reference\": \"Observation/ViralLoadSuppressionExample2\"\n              }\n            ]\n          },\n          {\n            \"title\": \"Death\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"DEATH\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Observation/DeathExample\"\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Encounter/HIVDiagnosisEncounterExample\",\n      \"resource\": {\n        \"resourceType\": \"Encounter\",\n        \"id\": \"HIVDiagnosisEncounterExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-disgnosis-encounter\"\n          ]\n        },\n        \"class\": {\n          \"code\": \"PRENC\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n        },\n        \"serviceProvider\": {\n          \"reference\": \"Organization/{{orgId}}\"\n        },\n        \"status\": \"finished\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Encounter/HIVClinicalEncounterExample\",\n      \"resource\": {\n        \"resourceType\": \"Encounter\",\n        \"id\": \"HIVClinicalEncounterExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-clinical-encounter\"\n          ]\n        },\n        \"class\": {\n          \"code\": \"OBSENC\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n        },\n        \"status\": \"finished\",\n        \"period\": {\n          \"start\": \"{{dateOfFirstClinicalVisit}}\"\n        },\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Patient/HIVPatientExample\",\n      \"resource\": {\n        \"resourceType\": \"Patient\",\n        \"id\": \"HIVPatientExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-patient\"\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/key-population\",\n            \"valueCodeableConcept\": {\n              \"coding\": [\n                {\n                  \"code\": \"{{popStatusFhir}}\"\n                }\n              ]\n            }\n          }\n        ],\n        \"active\": true,\n        \"name\": [\n          {\n            \"use\": \"official\",\n            \"given\": [\n              \"{{$randomFirstName}}\"\n            ],\n            \"family\": \"{{$randomLastName}}\"\n          }\n        ],\n        \"maritalStatus\": {\n          \"coding\": [\n            {\n              \"code\": \"{{maritalStatusFhir}}\",\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\"\n            }\n          ]\n        },\n        \"gender\": \"{{gender}}\",\n        \"birthDate\": \"{{birthDate}}\",\n        \"telecom\": [\n          {\n            \"system\": \"phone\",\n            \"value\": \"{{$randomPhoneNumber}}\"\n          }\n        ],\n        \"address\": [\n          {\n            \"country\": \"DISI country\",\n            \"state\": \"DISI state 1\",\n            \"district\": \"DISI district 1\",\n            \"city\": \"{{$randomCity}}\"\n          }\n        ],\n        \"identifier\": [\n          {\n            \"system\": \"https://instantopenhie.org/client{{randomClientId}}\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/art\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/passport\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/nid\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/facility{{randomClientId}}\",\n            \"value\": \"{{$guid}}\"\n          }\n        ],\n        \"managingOrganization\": {\n          \"reference\": \"Organization/{{orgId}}\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"RelatedPerson/GuardianExample\",\n      \"resource\": {\n        \"resourceType\": \"RelatedPerson\",\n        \"id\": \"GuardianExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-related-person\"\n          ]\n        },\n        \"name\": [\n          {\n            \"given\": [\n              \"{{$randomFirstName}}\"\n            ],\n            \"family\": \"{{$randomLastName}}\"\n          }\n        ],\n        \"patient\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Condition/HIVDiagnosisExample\",\n      \"resource\": {\n        \"resourceType\": \"Condition\",\n        \"id\": \"HIVDiagnosisExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-diagnosis\"\n          ]\n        },\n        \"clinicalStatus\": {\n          \"coding\": [\n            {\n              \"code\": \"active\"\n            }\n          ]\n        },\n        \"verificationStatus\": {\n          \"coding\": [\n            {\n              \"code\": \"confirmed\"\n            }\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"86406008\",\n              \"system\": \"http://snomed.info/sct\"\n            }\n          ]\n        },\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"recordedDate\": \"{{hivPositiveDate}}\",\n        \"identifier\": [\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/hiv-diagnosis\",\n            \"value\": \"{{$guid}}\"\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/HIVRecencyTestConductedExample\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"HIVRecencyTestConductedExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-recency-test-conducted\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"HIV-RECENCY-TEST-CONDUCTED\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"HIV recency test conducted\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"valueBoolean\": {{recencyTestConductedFhir}},\n        \"encounter\": {\n          \"reference\": \"Encounter/HIVClinicalEncounterExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/HIVRecencyResultExample\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"HIVRecencyResultExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-recency-result\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"HIV-RECENCY-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"HIV recency test conducted\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"valueBoolean\": {{recencyStatusFhir}},\n        \"encounter\": {\n          \"reference\": \"Encounter/HIVClinicalEncounterExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"EpisodeOfCare/HIVEpisodeOfCareExample\",\n      \"resource\": {\n        \"resourceType\": \"EpisodeOfCare\",\n        \"id\": \"HIVEpisodeOfCareExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-episode-of-care\"\n          ]\n        },\n        \"status\": \"active\",\n        \"patient\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"period\": {\n          \"start\": \"{{enrollmentDate}}\"\n        },\n        \"identifier\": [\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/enrollment-unique-id\",\n            \"value\": \"{{$guid}}\"\n          }\n        ],\n        \"managingOrganization\": {\n          \"reference\": \"Organization/{{orgId}}\"\n        },\n        \"diagnosis\": [\n          {\n            \"condition\": {\n              \"reference\": \"Condition/HIVDiagnosisExample\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"CarePlan/ARVTreatmentExample1\",\n      \"resource\": {\n        \"resourceType\": \"CarePlan\",\n        \"id\": \"ARVTreatmentExample1\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-arv-treatment\"\n          ]\n        },\n        \"activity\": [\n          {\n            \"detail\": {\n              \"extension\": [\n                {\n                  \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/art-regimen-line\",\n                  \"valueCodeableConcept\": {\n                    \"coding\": [\n                      {\n                        \"code\": \"{{artLineFhir}}\"\n                      }\n                    ]\n                  }\n                }\n              ],\n              \"status\": \"stopped\",\n              \"kind\": \"MedicationRequest\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"45260-7\",\n                    \"system\": \"http://loinc.org\",\n                    \"display\": \"HIV ART medication\"\n                  }\n                ]\n              },\n              \"productCodeableConcept\": {\n                \"coding\": [\n                  {\n                    \"code\": \"{{artRegimen}}\"\n                  }\n                ]\n              }\n            }\n          }\n        ],\n        \"status\": \"active\",\n        \"intent\": \"plan\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"period\": {\n          \"start\": \"{{artStartDate}}\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"CarePlan/ARVTreatmentExample2\",\n      \"resource\": {\n        \"resourceType\": \"CarePlan\",\n        \"id\": \"ARVTreatmentExample2\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-arv-treatment\"\n          ]\n        },\n        \"activity\": [\n          {\n            \"detail\": {\n              \"extension\": [\n                {\n                  \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/art-regimen-line\",\n                  \"valueCodeableConcept\": {\n                    \"coding\": [\n                      {\n                        \"code\": \"{{switchLineFhir1}}\"\n                      }\n                    ]\n                  }\n                }\n              ],\n              \"status\": \"in-progress\",\n              \"kind\": \"MedicationRequest\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"45260-7\",\n                    \"system\": \"http://loinc.org\",\n                    \"display\": \"HIV ART medication\"\n                  }\n                ]\n              },\n              \"productCodeableConcept\": {\n                \"coding\": [\n                  {\n                    \"code\": \"{{switchRegimen1}}\"\n                  }\n                ]\n              }\n            }\n          }\n        ],\n        \"status\": \"active\",\n        \"intent\": \"plan\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"period\": {\n          \"start\": \"{{switchDate1}}\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/CD4Example1\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"CD4Example1\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-cd4-test\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"CD4-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"CD4 result\"\n            }\n          ]\n        },\n        \"component\": [\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"113056008\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 result\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Result1}}\n          },\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"313938009\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 percentage\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Percentage1}}\n          }\n        ],\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{cd4CollectionDate1}}\"\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/CD4Example2\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"CD4Example2\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-cd4-test\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"CD4-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"CD4 result\"\n            }\n          ]\n        },\n        \"component\": [\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"113056008\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 result\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Result2}}\n          },\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"313938009\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 percentage\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Percentage2}}\n          }\n        ],\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{cd4CollectionDate2}}\"\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/ViralLoadSuppressionExample1\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"ViralLoadSuppressionExample1\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-viral-load-suppression\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"VL-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"Viral load result\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{vlDate1}}\",\n        \"valueInteger\": {{vlResult1}},\n        \"interpretation\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{vlInterpretationFhir1}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-interpretation\",\n                \"display\": \"{{vlInterpretation1}}\"\n              }\n            ]\n          },\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{currVLInterpretationFhir}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-suppression\",\n                \"display\": \"{{currVLInterpretation}}\"\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/ViralLoadSuppressionExample2\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"ViralLoadSuppressionExample2\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-viral-load-suppression\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"VL-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"Viral load result\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{vlDate2}}\",\n        \"valueInteger\": {{vlResult2}},\n        \"interpretation\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{vlInterpretationFhir2}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-interpretation\",\n                \"display\": \"{{vlInterpretation2}}\"\n              }\n            ]\n          },\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{currVLInterpretationFhir}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-suppression\",\n                \"display\": \"{{currVLInterpretation}}\"\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/DeathExample\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"DeathExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/death-obs\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"CAUSE-OF-DEATH\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"Cause of death\"\n            }\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/last-clinical-visit\",\n            \"valueDateTime\": \"{{dateOfLastVisit}}\"\n          }\n        ],\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{deathDate}}\",\n        \"valueCodeableConcept\": {\n          \"coding\": [\n            {\n              \"code\": \"{{deathCauseFhir}}\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-causeofdeath\",\n              \"display\": \"{{deathCause}}\"\n            }\n          ]\n        }\n      }\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{openhimHost}}/fhir",
+							"protocol": "http",
+							"host": [
+								"{{openhimHost}}"
+							],
+							"path": [
+								"fhir"
+							]
+						},
+						"description": "Remove author and ARVTherapySummaryExample section reference"
+					},
+					"response": []
+				},
+				{
+					"name": "Submit random CSV",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Custom test"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "registration.firstName,registration.lastName,registration.gender,registration.birthDate,registration.keyPopulationStatus,registration.maritalStatus,registration.clientSourceId,registration.facilityCode,registration.address.country,registration.address.state,registration.address.district,registration.address.city,registration.tel,registration.NID,registration.guardianName,hivDiagnosis.hivPosDate,hivDiagnosis.hivPosFacilityCode,hivDiagnosis.hivPosUID,hivDiagnosis.recencyTestConducted,hivDiagnosis.recencyStatus,entryToCare.enrollmentDate,entryToCare.UID,entryToCare.facilityCode,entryToCare.dateOfFirstClinicalVisit,artInitiation.date,artInitiation.line,artInitiation.regimen,cd4.collectionDate,cd4.result,cd4.percentage,artRegimenSwitch.date,artRegimenSwitch.line,artRegimenSwitch.regimen,viralSuppression.date,viralSuppression.result,viralSuppression.interpretation,viralSuppression.currentStatus,death.date,death.ageAtDeath,death.dateOfLastVisit,death.cause\n{{$randomFirstName}},{{$randomLastName}},{{gender}},{{birthDate}},{{popStatus}},{{maritalStatus}},{{$guid}},facility{{randomClientId}},DISI country,DISI state 1,DISI district 1,{{$randomCity}},{{$randomPhoneNumber}},{{$guid}},{{$randomFirstName}} {{$randomLastName}},{{hivPositiveDate}},facility{{randomClientId}},{{$guid}},{{recencyTestConducted}},{{recencyStatus}},{{enrollmentDate}},{{$guid}},facility{{randomClientId}},{{dateOfFirstClinicalVisit}},{{artStartDate}},First line,TDF/3TC/DTG,{{cd4CollectionDates}},{{cd4Results}},{{cd4Percentages}},{{switchDates}},{{switchLines}},{{switchRegimens}},{{vlDates}},{{vlResults}},{{vlInterpretations}},{{currVLInterpretation}},{{deathDate}},{{ageAtDeath}},{{dateOfLastVisit}},{{deathCause}}",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{openhimHost}}/csv",
+							"protocol": "http",
+							"host": [
+								"{{openhimHost}}"
+							],
+							"path": [
+								"csv"
+							]
+						},
+						"description": "Remove author and ARVTherapySummaryExample section reference"
+					},
+					"response": []
+				},
+				{
+					"name": "Submit random bundle - match 1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/fhir+json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Custom test",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Bundle\",\n  \"id\": \"HIVBundleExample\",\n  \"type\": \"document\",\n  \"entry\": [\n    {\n      \"fullUrl\": \"Composition/HIVCompositionExample\",\n      \"resource\": {\n        \"resourceType\": \"Composition\",\n        \"id\": \"HIVCompositionExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-composition\"\n          ]\n        },\n        \"type\": {\n          \"coding\": [\n            {\n              \"code\": \"95412-3\",\n              \"system\": \"http://loinc.org\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"identifier\": {\n          \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/hiv-case-report\",\n          \"value\": \"{{guid}}\"\n        },\n        \"date\": \"2021-05-18\",\n        \"author\": [\n          {\n            \"reference\": \"Organization/{{orgId}}\"\n          }\n        ],\n        \"title\": \"HIV Case Report\",\n        \"section\": [\n          {\n            \"title\": \"Client registration\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"CLIENT-REGISTRATION\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Patient/HIVPatientExample\"\n              },\n              {\n                \"reference\": \"RelatedPerson/GuardianExample\"\n              }\n            ]\n          },\n          {\n            \"title\": \"HIV Diagnosis\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"HIV-DIAGNOSIS\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Condition/HIVDiagnosisExample\"\n              },\n              {\n                \"reference\": \"Encounter/HIVDiagnosisEncounterExample\"\n              },\n              {\n                \"reference\": \"Observation/HIVRecencyTestConductedExample\"\n              },\n              {\n                \"reference\": \"Observation/HIVRecencyResultExample\"\n              }\n            ]\n          },\n          {\n            \"title\": \"HIV Entry To Care\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"HIV-ENTRY-TO-CARE\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"EpisodeOfCare/HIVEpisodeOfCareExample\"\n              },\n              {\n                \"reference\": \"Encounter/HIVClinicalEncounterExample\"\n              }\n            ]\n          },\n          {\n            \"title\": \"ARV Treatment\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"arvTherapySummary\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"CarePlan/ARVTreatmentExample1\"\n              },\n              {\n                \"reference\": \"CarePlan/ARVTreatmentExample2\"\n              }\n            ]\n          },\n          {\n            \"title\": \"CD4\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"CD4\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Observation/CD4Example1\"\n              },\n              {\n                \"reference\": \"Observation/CD4Example2\"\n              }\n            ]\n          },\n          {\n            \"title\": \"Viral Suppression\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"VIRAL-SUPPRESSION\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Observation/ViralLoadSuppressionExample1\"\n              },\n              {\n                \"reference\": \"Observation/ViralLoadSuppressionExample2\"\n              }\n            ]\n          },\n          {\n            \"title\": \"Death\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"DEATH\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Observation/DeathExample\"\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Encounter/HIVDiagnosisEncounterExample\",\n      \"resource\": {\n        \"resourceType\": \"Encounter\",\n        \"id\": \"HIVDiagnosisEncounterExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-disgnosis-encounter\"\n          ]\n        },\n        \"class\": {\n          \"code\": \"PRENC\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n        },\n        \"serviceProvider\": {\n          \"reference\": \"Organization/{{orgId}}\"\n        },\n        \"status\": \"finished\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Encounter/HIVClinicalEncounterExample\",\n      \"resource\": {\n        \"resourceType\": \"Encounter\",\n        \"id\": \"HIVClinicalEncounterExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-clinical-encounter\"\n          ]\n        },\n        \"class\": {\n          \"code\": \"OBSENC\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n        },\n        \"status\": \"finished\",\n        \"period\": {\n          \"start\": \"{{dateOfFirstClinicalVisit}}\"\n        },\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Patient/HIVPatientExample\",\n      \"resource\": {\n        \"resourceType\": \"Patient\",\n        \"id\": \"HIVPatientExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-patient\"\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/key-population\",\n            \"valueCodeableConcept\": {\n              \"coding\": [\n                {\n                  \"code\": \"{{popStatusFhir}}\"\n                }\n              ]\n            }\n          }\n        ],\n        \"active\": true,\n        \"name\": [\n          {\n            \"use\": \"official\",\n            \"given\": [\n              \"John\"\n            ],\n            \"family\": \"Smith\"\n          }\n        ],\n        \"maritalStatus\": {\n          \"coding\": [\n            {\n              \"code\": \"{{maritalStatusFhir}}\",\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\"\n            }\n          ]\n        },\n        \"gender\": \"male\",\n        \"birthDate\": \"1986-06-04\",\n        \"telecom\": [\n          {\n            \"system\": \"phone\",\n            \"value\": \"555-555-555\"\n          }\n        ],\n        \"address\": [\n          {\n            \"country\": \"DISI country\",\n            \"state\": \"DISI state 1\",\n            \"district\": \"DISI district 1\",\n            \"city\": \"{{$randomCity}}\"\n          }\n        ],\n        \"identifier\": [\n          {\n            \"system\": \"https://instantopenhie.org/client{{randomClientId}}\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/art\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/passport\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/nid\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/facility{{randomClientId}}\",\n            \"value\": \"{{$guid}}\"\n          }\n        ],\n        \"managingOrganization\": {\n          \"reference\": \"Organization/{{orgId}}\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"RelatedPerson/GuardianExample\",\n      \"resource\": {\n        \"resourceType\": \"RelatedPerson\",\n        \"id\": \"GuardianExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-related-person\"\n          ]\n        },\n        \"name\": [\n          {\n            \"given\": [\n              \"{{$randomFirstName}}\"\n            ],\n            \"family\": \"{{$randomLastName}}\"\n          }\n        ],\n        \"patient\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Condition/HIVDiagnosisExample\",\n      \"resource\": {\n        \"resourceType\": \"Condition\",\n        \"id\": \"HIVDiagnosisExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-diagnosis\"\n          ]\n        },\n        \"clinicalStatus\": {\n          \"coding\": [\n            {\n              \"code\": \"active\"\n            }\n          ]\n        },\n        \"verificationStatus\": {\n          \"coding\": [\n            {\n              \"code\": \"confirmed\"\n            }\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"86406008\",\n              \"system\": \"http://snomed.info/sct\"\n            }\n          ]\n        },\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"recordedDate\": \"{{hivPositiveDate}}\",\n        \"identifier\": [\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/hiv-diagnosis\",\n            \"value\": \"{{$guid}}\"\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/HIVRecencyTestConductedExample\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"HIVRecencyTestConductedExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-recency-test-conducted\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"HIV-RECENCY-TEST-CONDUCTED\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"HIV recency test conducted\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"valueBoolean\": {{recencyTestConductedFhir}},\n        \"encounter\": {\n          \"reference\": \"Encounter/HIVClinicalEncounterExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/HIVRecencyResultExample\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"HIVRecencyResultExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-recency-result\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"HIV-RECENCY-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"HIV recency test conducted\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"valueBoolean\": {{recencyStatusFhir}},\n        \"encounter\": {\n          \"reference\": \"Encounter/HIVClinicalEncounterExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"EpisodeOfCare/HIVEpisodeOfCareExample\",\n      \"resource\": {\n        \"resourceType\": \"EpisodeOfCare\",\n        \"id\": \"HIVEpisodeOfCareExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-episode-of-care\"\n          ]\n        },\n        \"status\": \"active\",\n        \"patient\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"period\": {\n          \"start\": \"{{enrollmentDate}}\"\n        },\n        \"identifier\": [\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/enrollment-unique-id\",\n            \"value\": \"{{$guid}}\"\n          }\n        ],\n        \"managingOrganization\": {\n          \"reference\": \"Organization/{{orgId}}\"\n        },\n        \"diagnosis\": [\n          {\n            \"condition\": {\n              \"reference\": \"Condition/HIVDiagnosisExample\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"CarePlan/ARVTreatmentExample1\",\n      \"resource\": {\n        \"resourceType\": \"CarePlan\",\n        \"id\": \"ARVTreatmentExample1\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-arv-treatment\"\n          ]\n        },\n        \"activity\": [\n          {\n            \"detail\": {\n              \"extension\": [\n                {\n                  \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/art-regimen-line\",\n                  \"valueCodeableConcept\": {\n                    \"coding\": [\n                      {\n                        \"code\": \"{{artLineFhir}}\"\n                      }\n                    ]\n                  }\n                }\n              ],\n              \"status\": \"stopped\",\n              \"kind\": \"MedicationRequest\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"45260-7\",\n                    \"system\": \"http://loinc.org\",\n                    \"display\": \"HIV ART medication\"\n                  }\n                ]\n              },\n              \"productCodeableConcept\": {\n                \"coding\": [\n                  {\n                    \"code\": \"{{artRegimen}}\"\n                  }\n                ]\n              }\n            }\n          }\n        ],\n        \"status\": \"active\",\n        \"intent\": \"plan\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"period\": {\n          \"start\": \"{{artStartDate}}\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"CarePlan/ARVTreatmentExample2\",\n      \"resource\": {\n        \"resourceType\": \"CarePlan\",\n        \"id\": \"ARVTreatmentExample2\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-arv-treatment\"\n          ]\n        },\n        \"activity\": [\n          {\n            \"detail\": {\n              \"extension\": [\n                {\n                  \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/art-regimen-line\",\n                  \"valueCodeableConcept\": {\n                    \"coding\": [\n                      {\n                        \"code\": \"{{switchLineFhir1}}\"\n                      }\n                    ]\n                  }\n                }\n              ],\n              \"status\": \"in-progress\",\n              \"kind\": \"MedicationRequest\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"45260-7\",\n                    \"system\": \"http://loinc.org\",\n                    \"display\": \"HIV ART medication\"\n                  }\n                ]\n              },\n              \"productCodeableConcept\": {\n                \"coding\": [\n                  {\n                    \"code\": \"{{switchRegimen1}}\"\n                  }\n                ]\n              }\n            }\n          }\n        ],\n        \"status\": \"active\",\n        \"intent\": \"plan\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"period\": {\n          \"start\": \"{{switchDate1}}\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/CD4Example1\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"CD4Example1\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-cd4-test\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"CD4-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"CD4 result\"\n            }\n          ]\n        },\n        \"component\": [\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"113056008\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 result\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Result1}}\n          },\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"313938009\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 percentage\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Percentage1}}\n          }\n        ],\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{cd4CollectionDate1}}\"\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/CD4Example2\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"CD4Example2\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-cd4-test\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"CD4-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"CD4 result\"\n            }\n          ]\n        },\n        \"component\": [\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"113056008\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 result\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Result2}}\n          },\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"313938009\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 percentage\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Percentage2}}\n          }\n        ],\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{cd4CollectionDate2}}\"\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/ViralLoadSuppressionExample1\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"ViralLoadSuppressionExample1\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-viral-load-suppression\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"VL-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"Viral load result\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{vlDate1}}\",\n        \"valueInteger\": {{vlResult1}},\n        \"interpretation\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{vlInterpretationFhir1}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-interpretation\",\n                \"display\": \"{{vlInterpretation1}}\"\n              }\n            ]\n          },\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{currVLInterpretationFhir}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-suppression\",\n                \"display\": \"{{currVLInterpretation}}\"\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/ViralLoadSuppressionExample2\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"ViralLoadSuppressionExample2\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-viral-load-suppression\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"VL-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"Viral load result\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{vlDate2}}\",\n        \"valueInteger\": {{vlResult2}},\n        \"interpretation\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{vlInterpretationFhir2}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-interpretation\",\n                \"display\": \"{{vlInterpretation2}}\"\n              }\n            ]\n          },\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{currVLInterpretationFhir}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-suppression\",\n                \"display\": \"{{currVLInterpretation}}\"\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/DeathExample\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"DeathExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/death-obs\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"CAUSE-OF-DEATH\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"Cause of death\"\n            }\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/last-clinical-visit\",\n            \"valueDateTime\": \"{{dateOfLastVisit}}\"\n          }\n        ],\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{deathDate}}\",\n        \"valueCodeableConcept\": {\n          \"coding\": [\n            {\n              \"code\": \"{{deathCauseFhir}}\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-causeofdeath\",\n              \"display\": \"{{deathCause}}\"\n            }\n          ]\n        }\n      }\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{openhimHost}}/fhir",
+							"protocol": "http",
+							"host": [
+								"{{openhimHost}}"
+							],
+							"path": [
+								"fhir"
+							]
+						},
+						"description": "Remove author and ARVTherapySummaryExample section reference"
+					},
+					"response": []
+				},
+				{
+					"name": "Submit random bundle - match 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/fhir+json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Custom test",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Bundle\",\n  \"id\": \"HIVBundleExample\",\n  \"type\": \"document\",\n  \"entry\": [\n    {\n      \"fullUrl\": \"Composition/HIVCompositionExample\",\n      \"resource\": {\n        \"resourceType\": \"Composition\",\n        \"id\": \"HIVCompositionExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-composition\"\n          ]\n        },\n        \"type\": {\n          \"coding\": [\n            {\n              \"code\": \"95412-3\",\n              \"system\": \"http://loinc.org\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"identifier\": {\n          \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/hiv-case-report\",\n          \"value\": \"{{guid}}\"\n        },\n        \"date\": \"2021-05-18\",\n        \"author\": [\n          {\n            \"reference\": \"Organization/{{orgId}}\"\n          }\n        ],\n        \"title\": \"HIV Case Report\",\n        \"section\": [\n          {\n            \"title\": \"Client registration\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"CLIENT-REGISTRATION\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Patient/HIVPatientExample\"\n              },\n              {\n                \"reference\": \"RelatedPerson/GuardianExample\"\n              }\n            ]\n          },\n          {\n            \"title\": \"HIV Diagnosis\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"HIV-DIAGNOSIS\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Condition/HIVDiagnosisExample\"\n              },\n              {\n                \"reference\": \"Encounter/HIVDiagnosisEncounterExample\"\n              },\n              {\n                \"reference\": \"Observation/HIVRecencyTestConductedExample\"\n              },\n              {\n                \"reference\": \"Observation/HIVRecencyResultExample\"\n              }\n            ]\n          },\n          {\n            \"title\": \"HIV Entry To Care\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"HIV-ENTRY-TO-CARE\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"EpisodeOfCare/HIVEpisodeOfCareExample\"\n              },\n              {\n                \"reference\": \"Encounter/HIVClinicalEncounterExample\"\n              }\n            ]\n          },\n          {\n            \"title\": \"ARV Treatment\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"arvTherapySummary\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"CarePlan/ARVTreatmentExample1\"\n              },\n              {\n                \"reference\": \"CarePlan/ARVTreatmentExample2\"\n              }\n            ]\n          },\n          {\n            \"title\": \"CD4\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"CD4\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Observation/CD4Example1\"\n              },\n              {\n                \"reference\": \"Observation/CD4Example2\"\n              }\n            ]\n          },\n          {\n            \"title\": \"Viral Suppression\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"VIRAL-SUPPRESSION\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Observation/ViralLoadSuppressionExample1\"\n              },\n              {\n                \"reference\": \"Observation/ViralLoadSuppressionExample2\"\n              }\n            ]\n          },\n          {\n            \"title\": \"Death\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"DEATH\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Observation/DeathExample\"\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Encounter/HIVDiagnosisEncounterExample\",\n      \"resource\": {\n        \"resourceType\": \"Encounter\",\n        \"id\": \"HIVDiagnosisEncounterExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-disgnosis-encounter\"\n          ]\n        },\n        \"class\": {\n          \"code\": \"PRENC\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n        },\n        \"serviceProvider\": {\n          \"reference\": \"Organization/{{orgId}}\"\n        },\n        \"status\": \"finished\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Encounter/HIVClinicalEncounterExample\",\n      \"resource\": {\n        \"resourceType\": \"Encounter\",\n        \"id\": \"HIVClinicalEncounterExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-clinical-encounter\"\n          ]\n        },\n        \"class\": {\n          \"code\": \"OBSENC\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n        },\n        \"status\": \"finished\",\n        \"period\": {\n          \"start\": \"{{dateOfFirstClinicalVisit}}\"\n        },\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Patient/HIVPatientExample\",\n      \"resource\": {\n        \"resourceType\": \"Patient\",\n        \"id\": \"HIVPatientExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-patient\"\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/key-population\",\n            \"valueCodeableConcept\": {\n              \"coding\": [\n                {\n                  \"code\": \"{{popStatusFhir}}\"\n                }\n              ]\n            }\n          }\n        ],\n        \"active\": true,\n        \"name\": [\n          {\n            \"use\": \"official\",\n            \"given\": [\n              \"Jon\"\n            ],\n            \"family\": \"Smith\"\n          }\n        ],\n        \"maritalStatus\": {\n          \"coding\": [\n            {\n              \"code\": \"{{maritalStatusFhir}}\",\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\"\n            }\n          ]\n        },\n        \"gender\": \"male\",\n        \"birthDate\": \"1986-06-04\",\n        \"telecom\": [\n          {\n            \"system\": \"phone\",\n            \"value\": \"555-555-555\"\n          }\n        ],\n        \"address\": [\n          {\n            \"country\": \"DISI country\",\n            \"state\": \"DISI state 1\",\n            \"district\": \"DISI district 1\",\n            \"city\": \"{{$randomCity}}\"\n          }\n        ],\n        \"identifier\": [\n          {\n            \"system\": \"https://instantopenhie.org/client{{randomClientId}}\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/art\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/passport\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/nid\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/facility{{randomClientId}}\",\n            \"value\": \"{{$guid}}\"\n          }\n        ],\n        \"managingOrganization\": {\n          \"reference\": \"Organization/{{orgId}}\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"RelatedPerson/GuardianExample\",\n      \"resource\": {\n        \"resourceType\": \"RelatedPerson\",\n        \"id\": \"GuardianExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-related-person\"\n          ]\n        },\n        \"name\": [\n          {\n            \"given\": [\n              \"{{$randomFirstName}}\"\n            ],\n            \"family\": \"{{$randomLastName}}\"\n          }\n        ],\n        \"patient\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Condition/HIVDiagnosisExample\",\n      \"resource\": {\n        \"resourceType\": \"Condition\",\n        \"id\": \"HIVDiagnosisExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-diagnosis\"\n          ]\n        },\n        \"clinicalStatus\": {\n          \"coding\": [\n            {\n              \"code\": \"active\"\n            }\n          ]\n        },\n        \"verificationStatus\": {\n          \"coding\": [\n            {\n              \"code\": \"confirmed\"\n            }\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"86406008\",\n              \"system\": \"http://snomed.info/sct\"\n            }\n          ]\n        },\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"recordedDate\": \"{{hivPositiveDate}}\",\n        \"identifier\": [\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/hiv-diagnosis\",\n            \"value\": \"{{$guid}}\"\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/HIVRecencyTestConductedExample\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"HIVRecencyTestConductedExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-recency-test-conducted\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"HIV-RECENCY-TEST-CONDUCTED\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"HIV recency test conducted\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"valueBoolean\": {{recencyTestConductedFhir}},\n        \"encounter\": {\n          \"reference\": \"Encounter/HIVClinicalEncounterExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/HIVRecencyResultExample\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"HIVRecencyResultExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-recency-result\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"HIV-RECENCY-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"HIV recency test conducted\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"valueBoolean\": {{recencyStatusFhir}},\n        \"encounter\": {\n          \"reference\": \"Encounter/HIVClinicalEncounterExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"EpisodeOfCare/HIVEpisodeOfCareExample\",\n      \"resource\": {\n        \"resourceType\": \"EpisodeOfCare\",\n        \"id\": \"HIVEpisodeOfCareExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-episode-of-care\"\n          ]\n        },\n        \"status\": \"active\",\n        \"patient\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"period\": {\n          \"start\": \"{{enrollmentDate}}\"\n        },\n        \"identifier\": [\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/enrollment-unique-id\",\n            \"value\": \"{{$guid}}\"\n          }\n        ],\n        \"managingOrganization\": {\n          \"reference\": \"Organization/{{orgId}}\"\n        },\n        \"diagnosis\": [\n          {\n            \"condition\": {\n              \"reference\": \"Condition/HIVDiagnosisExample\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"CarePlan/ARVTreatmentExample1\",\n      \"resource\": {\n        \"resourceType\": \"CarePlan\",\n        \"id\": \"ARVTreatmentExample1\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-arv-treatment\"\n          ]\n        },\n        \"activity\": [\n          {\n            \"detail\": {\n              \"extension\": [\n                {\n                  \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/art-regimen-line\",\n                  \"valueCodeableConcept\": {\n                    \"coding\": [\n                      {\n                        \"code\": \"{{artLineFhir}}\"\n                      }\n                    ]\n                  }\n                }\n              ],\n              \"status\": \"stopped\",\n              \"kind\": \"MedicationRequest\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"45260-7\",\n                    \"system\": \"http://loinc.org\",\n                    \"display\": \"HIV ART medication\"\n                  }\n                ]\n              },\n              \"productCodeableConcept\": {\n                \"coding\": [\n                  {\n                    \"code\": \"{{artRegimen}}\"\n                  }\n                ]\n              }\n            }\n          }\n        ],\n        \"status\": \"active\",\n        \"intent\": \"plan\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"period\": {\n          \"start\": \"{{artStartDate}}\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"CarePlan/ARVTreatmentExample2\",\n      \"resource\": {\n        \"resourceType\": \"CarePlan\",\n        \"id\": \"ARVTreatmentExample2\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-arv-treatment\"\n          ]\n        },\n        \"activity\": [\n          {\n            \"detail\": {\n              \"extension\": [\n                {\n                  \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/art-regimen-line\",\n                  \"valueCodeableConcept\": {\n                    \"coding\": [\n                      {\n                        \"code\": \"{{switchLineFhir1}}\"\n                      }\n                    ]\n                  }\n                }\n              ],\n              \"status\": \"in-progress\",\n              \"kind\": \"MedicationRequest\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"45260-7\",\n                    \"system\": \"http://loinc.org\",\n                    \"display\": \"HIV ART medication\"\n                  }\n                ]\n              },\n              \"productCodeableConcept\": {\n                \"coding\": [\n                  {\n                    \"code\": \"{{switchRegimen1}}\"\n                  }\n                ]\n              }\n            }\n          }\n        ],\n        \"status\": \"active\",\n        \"intent\": \"plan\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"period\": {\n          \"start\": \"{{switchDate1}}\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/CD4Example1\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"CD4Example1\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-cd4-test\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"CD4-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"CD4 result\"\n            }\n          ]\n        },\n        \"component\": [\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"113056008\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 result\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Result1}}\n          },\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"313938009\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 percentage\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Percentage1}}\n          }\n        ],\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{cd4CollectionDate1}}\"\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/CD4Example2\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"CD4Example2\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-cd4-test\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"CD4-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"CD4 result\"\n            }\n          ]\n        },\n        \"component\": [\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"113056008\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 result\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Result2}}\n          },\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"313938009\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 percentage\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Percentage2}}\n          }\n        ],\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{cd4CollectionDate2}}\"\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/ViralLoadSuppressionExample1\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"ViralLoadSuppressionExample1\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-viral-load-suppression\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"VL-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"Viral load result\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{vlDate1}}\",\n        \"valueInteger\": {{vlResult1}},\n        \"interpretation\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{vlInterpretationFhir1}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-interpretation\",\n                \"display\": \"{{vlInterpretation1}}\"\n              }\n            ]\n          },\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{currVLInterpretationFhir}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-suppression\",\n                \"display\": \"{{currVLInterpretation}}\"\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/ViralLoadSuppressionExample2\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"ViralLoadSuppressionExample2\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-viral-load-suppression\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"VL-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"Viral load result\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{vlDate2}}\",\n        \"valueInteger\": {{vlResult2}},\n        \"interpretation\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{vlInterpretationFhir2}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-interpretation\",\n                \"display\": \"{{vlInterpretation2}}\"\n              }\n            ]\n          },\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{currVLInterpretationFhir}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-suppression\",\n                \"display\": \"{{currVLInterpretation}}\"\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/DeathExample\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"DeathExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/death-obs\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"CAUSE-OF-DEATH\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"Cause of death\"\n            }\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/last-clinical-visit\",\n            \"valueDateTime\": \"{{dateOfLastVisit}}\"\n          }\n        ],\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{deathDate}}\",\n        \"valueCodeableConcept\": {\n          \"coding\": [\n            {\n              \"code\": \"{{deathCauseFhir}}\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-causeofdeath\",\n              \"display\": \"{{deathCause}}\"\n            }\n          ]\n        }\n      }\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{openhimHost}}/fhir",
+							"protocol": "http",
+							"host": [
+								"{{openhimHost}}"
+							],
+							"path": [
+								"fhir"
+							]
+						},
+						"description": "Remove author and ARVTherapySummaryExample section reference"
+					},
+					"response": []
+				},
+				{
+					"name": "Submit random bundle - match 3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/fhir+json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Custom test",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Bundle\",\n  \"id\": \"HIVBundleExample\",\n  \"type\": \"document\",\n  \"entry\": [\n    {\n      \"fullUrl\": \"Composition/HIVCompositionExample\",\n      \"resource\": {\n        \"resourceType\": \"Composition\",\n        \"id\": \"HIVCompositionExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-composition\"\n          ]\n        },\n        \"type\": {\n          \"coding\": [\n            {\n              \"code\": \"95412-3\",\n              \"system\": \"http://loinc.org\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"identifier\": {\n          \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/hiv-case-report\",\n          \"value\": \"{{guid}}\"\n        },\n        \"date\": \"2021-05-18\",\n        \"author\": [\n          {\n            \"reference\": \"Organization/{{orgId}}\"\n          }\n        ],\n        \"title\": \"HIV Case Report\",\n        \"section\": [\n          {\n            \"title\": \"Client registration\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"CLIENT-REGISTRATION\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Patient/HIVPatientExample\"\n              },\n              {\n                \"reference\": \"RelatedPerson/GuardianExample\"\n              }\n            ]\n          },\n          {\n            \"title\": \"HIV Diagnosis\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"HIV-DIAGNOSIS\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Condition/HIVDiagnosisExample\"\n              },\n              {\n                \"reference\": \"Encounter/HIVDiagnosisEncounterExample\"\n              },\n              {\n                \"reference\": \"Observation/HIVRecencyTestConductedExample\"\n              },\n              {\n                \"reference\": \"Observation/HIVRecencyResultExample\"\n              }\n            ]\n          },\n          {\n            \"title\": \"HIV Entry To Care\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"HIV-ENTRY-TO-CARE\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"EpisodeOfCare/HIVEpisodeOfCareExample\"\n              },\n              {\n                \"reference\": \"Encounter/HIVClinicalEncounterExample\"\n              }\n            ]\n          },\n          {\n            \"title\": \"ARV Treatment\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"arvTherapySummary\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"CarePlan/ARVTreatmentExample1\"\n              },\n              {\n                \"reference\": \"CarePlan/ARVTreatmentExample2\"\n              }\n            ]\n          },\n          {\n            \"title\": \"CD4\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"CD4\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Observation/CD4Example1\"\n              },\n              {\n                \"reference\": \"Observation/CD4Example2\"\n              }\n            ]\n          },\n          {\n            \"title\": \"Viral Suppression\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"VIRAL-SUPPRESSION\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Observation/ViralLoadSuppressionExample1\"\n              },\n              {\n                \"reference\": \"Observation/ViralLoadSuppressionExample2\"\n              }\n            ]\n          },\n          {\n            \"title\": \"Death\",\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"DEATH\",\n                  \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-case-report-sections\"\n                }\n              ]\n            },\n            \"entry\": [\n              {\n                \"reference\": \"Observation/DeathExample\"\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Encounter/HIVDiagnosisEncounterExample\",\n      \"resource\": {\n        \"resourceType\": \"Encounter\",\n        \"id\": \"HIVDiagnosisEncounterExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-disgnosis-encounter\"\n          ]\n        },\n        \"class\": {\n          \"code\": \"PRENC\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n        },\n        \"serviceProvider\": {\n          \"reference\": \"Organization/{{orgId}}\"\n        },\n        \"status\": \"finished\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Encounter/HIVClinicalEncounterExample\",\n      \"resource\": {\n        \"resourceType\": \"Encounter\",\n        \"id\": \"HIVClinicalEncounterExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-clinical-encounter\"\n          ]\n        },\n        \"class\": {\n          \"code\": \"OBSENC\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\"\n        },\n        \"status\": \"finished\",\n        \"period\": {\n          \"start\": \"{{dateOfFirstClinicalVisit}}\"\n        },\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Patient/HIVPatientExample\",\n      \"resource\": {\n        \"resourceType\": \"Patient\",\n        \"id\": \"HIVPatientExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-patient\"\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/key-population\",\n            \"valueCodeableConcept\": {\n              \"coding\": [\n                {\n                  \"code\": \"{{popStatusFhir}}\"\n                }\n              ]\n            }\n          }\n        ],\n        \"active\": true,\n        \"name\": [\n          {\n            \"use\": \"official\",\n            \"given\": [\n              \"Jon\"\n            ],\n            \"family\": \"Smth\"\n          }\n        ],\n        \"maritalStatus\": {\n          \"coding\": [\n            {\n              \"code\": \"{{maritalStatusFhir}}\",\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\"\n            }\n          ]\n        },\n        \"gender\": \"male\",\n        \"birthDate\": \"1986-06-04\",\n        \"telecom\": [\n          {\n            \"system\": \"phone\",\n            \"value\": \"888-888-888\"\n          }\n        ],\n        \"address\": [\n          {\n            \"country\": \"DISI country\",\n            \"state\": \"DISI state 1\",\n            \"district\": \"DISI district 1\",\n            \"city\": \"{{$randomCity}}\"\n          }\n        ],\n        \"identifier\": [\n          {\n            \"system\": \"https://instantopenhie.org/client{{randomClientId}}\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/art\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/passport\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/nid\",\n            \"value\": \"{{$guid}}\"\n          },\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/facility{{randomClientId}}\",\n            \"value\": \"{{$guid}}\"\n          }\n        ],\n        \"managingOrganization\": {\n          \"reference\": \"Organization/{{orgId}}\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"RelatedPerson/GuardianExample\",\n      \"resource\": {\n        \"resourceType\": \"RelatedPerson\",\n        \"id\": \"GuardianExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-related-person\"\n          ]\n        },\n        \"name\": [\n          {\n            \"given\": [\n              \"{{$randomFirstName}}\"\n            ],\n            \"family\": \"{{$randomLastName}}\"\n          }\n        ],\n        \"patient\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Condition/HIVDiagnosisExample\",\n      \"resource\": {\n        \"resourceType\": \"Condition\",\n        \"id\": \"HIVDiagnosisExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-diagnosis\"\n          ]\n        },\n        \"clinicalStatus\": {\n          \"coding\": [\n            {\n              \"code\": \"active\"\n            }\n          ]\n        },\n        \"verificationStatus\": {\n          \"coding\": [\n            {\n              \"code\": \"confirmed\"\n            }\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"86406008\",\n              \"system\": \"http://snomed.info/sct\"\n            }\n          ]\n        },\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"recordedDate\": \"{{hivPositiveDate}}\",\n        \"identifier\": [\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/hiv-diagnosis\",\n            \"value\": \"{{$guid}}\"\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/HIVRecencyTestConductedExample\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"HIVRecencyTestConductedExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-recency-test-conducted\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"HIV-RECENCY-TEST-CONDUCTED\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"HIV recency test conducted\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"valueBoolean\": {{recencyTestConductedFhir}},\n        \"encounter\": {\n          \"reference\": \"Encounter/HIVClinicalEncounterExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/HIVRecencyResultExample\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"HIVRecencyResultExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-recency-result\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"HIV-RECENCY-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"HIV recency test conducted\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"valueBoolean\": {{recencyStatusFhir}},\n        \"encounter\": {\n          \"reference\": \"Encounter/HIVClinicalEncounterExample\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"EpisodeOfCare/HIVEpisodeOfCareExample\",\n      \"resource\": {\n        \"resourceType\": \"EpisodeOfCare\",\n        \"id\": \"HIVEpisodeOfCareExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-episode-of-care\"\n          ]\n        },\n        \"status\": \"active\",\n        \"patient\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"period\": {\n          \"start\": \"{{enrollmentDate}}\"\n        },\n        \"identifier\": [\n          {\n            \"system\": \"http://openhie.org/fhir/hiv-casereporting/identifier/enrollment-unique-id\",\n            \"value\": \"{{$guid}}\"\n          }\n        ],\n        \"managingOrganization\": {\n          \"reference\": \"Organization/{{orgId}}\"\n        },\n        \"diagnosis\": [\n          {\n            \"condition\": {\n              \"reference\": \"Condition/HIVDiagnosisExample\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"CarePlan/ARVTreatmentExample1\",\n      \"resource\": {\n        \"resourceType\": \"CarePlan\",\n        \"id\": \"ARVTreatmentExample1\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-arv-treatment\"\n          ]\n        },\n        \"activity\": [\n          {\n            \"detail\": {\n              \"extension\": [\n                {\n                  \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/art-regimen-line\",\n                  \"valueCodeableConcept\": {\n                    \"coding\": [\n                      {\n                        \"code\": \"{{artLineFhir}}\"\n                      }\n                    ]\n                  }\n                }\n              ],\n              \"status\": \"stopped\",\n              \"kind\": \"MedicationRequest\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"45260-7\",\n                    \"system\": \"http://loinc.org\",\n                    \"display\": \"HIV ART medication\"\n                  }\n                ]\n              },\n              \"productCodeableConcept\": {\n                \"coding\": [\n                  {\n                    \"code\": \"{{artRegimen}}\"\n                  }\n                ]\n              }\n            }\n          }\n        ],\n        \"status\": \"active\",\n        \"intent\": \"plan\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"period\": {\n          \"start\": \"{{artStartDate}}\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"CarePlan/ARVTreatmentExample2\",\n      \"resource\": {\n        \"resourceType\": \"CarePlan\",\n        \"id\": \"ARVTreatmentExample2\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-arv-treatment\"\n          ]\n        },\n        \"activity\": [\n          {\n            \"detail\": {\n              \"extension\": [\n                {\n                  \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/art-regimen-line\",\n                  \"valueCodeableConcept\": {\n                    \"coding\": [\n                      {\n                        \"code\": \"{{switchLineFhir1}}\"\n                      }\n                    ]\n                  }\n                }\n              ],\n              \"status\": \"in-progress\",\n              \"kind\": \"MedicationRequest\",\n              \"code\": {\n                \"coding\": [\n                  {\n                    \"code\": \"45260-7\",\n                    \"system\": \"http://loinc.org\",\n                    \"display\": \"HIV ART medication\"\n                  }\n                ]\n              },\n              \"productCodeableConcept\": {\n                \"coding\": [\n                  {\n                    \"code\": \"{{switchRegimen1}}\"\n                  }\n                ]\n              }\n            }\n          }\n        ],\n        \"status\": \"active\",\n        \"intent\": \"plan\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"period\": {\n          \"start\": \"{{switchDate1}}\"\n        }\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/CD4Example1\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"CD4Example1\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-cd4-test\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"CD4-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"CD4 result\"\n            }\n          ]\n        },\n        \"component\": [\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"113056008\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 result\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Result1}}\n          },\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"313938009\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 percentage\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Percentage1}}\n          }\n        ],\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{cd4CollectionDate1}}\"\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/CD4Example2\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"CD4Example2\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-cd4-test\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"CD4-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"CD4 result\"\n            }\n          ]\n        },\n        \"component\": [\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"113056008\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 result\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Result2}}\n          },\n          {\n            \"code\": {\n              \"coding\": [\n                {\n                  \"code\": \"313938009\",\n                  \"system\": \"http://snomed.info/sct\",\n                  \"display\": \"CD4 percentage\"\n                }\n              ]\n            },\n            \"valueInteger\": {{cd4Percentage2}}\n          }\n        ],\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{cd4CollectionDate2}}\"\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/ViralLoadSuppressionExample1\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"ViralLoadSuppressionExample1\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-viral-load-suppression\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"VL-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"Viral load result\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{vlDate1}}\",\n        \"valueInteger\": {{vlResult1}},\n        \"interpretation\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{vlInterpretationFhir1}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-interpretation\",\n                \"display\": \"{{vlInterpretation1}}\"\n              }\n            ]\n          },\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{currVLInterpretationFhir}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-suppression\",\n                \"display\": \"{{currVLInterpretation}}\"\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/ViralLoadSuppressionExample2\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"ViralLoadSuppressionExample2\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/hiv-viral-load-suppression\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"VL-RESULT\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"Viral load result\"\n            }\n          ]\n        },\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{vlDate2}}\",\n        \"valueInteger\": {{vlResult2}},\n        \"interpretation\": [\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{vlInterpretationFhir2}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-interpretation\",\n                \"display\": \"{{vlInterpretation2}}\"\n              }\n            ]\n          },\n          {\n            \"coding\": [\n              {\n                \"code\": \"{{currVLInterpretationFhir}}\",\n                \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-suppression\",\n                \"display\": \"{{currVLInterpretation}}\"\n              }\n            ]\n          }\n        ]\n      }\n    },\n    {\n      \"fullUrl\": \"Observation/DeathExample\",\n      \"resource\": {\n        \"resourceType\": \"Observation\",\n        \"id\": \"DeathExample\",\n        \"meta\": {\n          \"profile\": [\n            \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/death-obs\"\n          ]\n        },\n        \"code\": {\n          \"coding\": [\n            {\n              \"code\": \"CAUSE-OF-DEATH\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-hiv-obs-codes\",\n              \"display\": \"Cause of death\"\n            }\n          ]\n        },\n        \"extension\": [\n          {\n            \"url\": \"http://openhie.org/fhir/hiv-casereporting/StructureDefinition/last-clinical-visit\",\n            \"valueDateTime\": \"{{dateOfLastVisit}}\"\n          }\n        ],\n        \"status\": \"final\",\n        \"subject\": {\n          \"reference\": \"Patient/HIVPatientExample\"\n        },\n        \"effectiveDateTime\": \"{{deathDate}}\",\n        \"valueCodeableConcept\": {\n          \"coding\": [\n            {\n              \"code\": \"{{deathCauseFhir}}\",\n              \"system\": \"http://openhie.org/fhir/hiv-casereporting/CodeSystem/cs-vl-causeofdeath\",\n              \"display\": \"{{deathCause}}\"\n            }\n          ]\n        }\n      }\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{openhimHost}}/fhir",
+							"protocol": "http",
+							"host": [
+								"{{openhimHost}}"
+							],
+							"path": [
+								"fhir"
+							]
+						},
+						"description": "Remove author and ARVTherapySummaryExample section reference"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const moment = require('moment');",
+					"",
+					"function getRandomInt(min, max) {",
+					"    min = Math.ceil(min);",
+					"    max = Math.floor(max);",
+					"    return Math.floor(Math.random() * (max - min + 1)) + min;",
+					"}",
+					"",
+					"function randomByProbability(options) {",
+					"  const r = Math.random()",
+					"  let cummulativeProb = 0",
+					"  for (let option of options) {",
+					"    cummulativeProb += option[0]",
+					"    if (r < cummulativeProb) {",
+					"      return option[1]",
+					"    }",
+					"  }",
+					"}",
+					"",
+					"pm.variables.set('randomClientId', getRandomInt(1, 3))",
+					"",
+					"const visitDate = moment().subtract((Math.random() * 10), 'years')",
+					"const hivPositiveDate = visitDate.format('YYYY-MM-DD');",
+					"pm.variables.set('hivPositiveDate', hivPositiveDate)",
+					"pm.variables.set('encounterDate', visitDate.toISOString())",
+					"pm.variables.set('enrollmentDate', visitDate.toISOString())",
+					"pm.variables.set('dateOfFirstClinicalVisit', visitDate.toISOString())",
+					"",
+					"const age = Math.floor(Math.random() * 70)",
+					"pm.variables.set('birthDate', moment(visitDate).subtract(age, 'years').format('YYYY-MM-DD'))",
+					"",
+					"const gender = [[0.50, 'male'], [0.45, 'female'], [0.03, 'other'], [0.02, 'unknown']]",
+					"pm.variables.set('gender', randomByProbability(gender))",
+					"",
+					"const popStatus = ['General Population', 'MSM', 'FSW', 'MSW', 'PWID', 'PWUD', 'Transgender']",
+					"const popStatusFhir = ['GENERAL-POPULATION', 'MSM', 'FSW', 'MSW', 'PWID', 'PWUD', 'TRANSGENDER']",
+					"const popStatusIndex = getRandomInt(0, popStatus.length - 1)",
+					"pm.variables.set('popStatus', popStatus[popStatusIndex])",
+					"pm.variables.set('popStatusFhir', popStatusFhir[popStatusIndex])",
+					"",
+					"const maritalStatus = ['Never Married', 'Married Monogamous', 'Married Polygamous', 'Cohabiting', 'Divorced/Separated']",
+					"const maritalStatusFhir = ['S', 'M', 'P', 'T', 'D']",
+					"const maritalStatusIndex = getRandomInt(0, maritalStatus.length - 1)",
+					"pm.variables.set('maritalStatus', maritalStatus[maritalStatusIndex])",
+					"pm.variables.set('maritalStatusFhir', maritalStatusFhir[maritalStatusIndex])",
+					"",
+					"const orgs = ['HIVOrganizationExample', 'HIVOrganizationExample2', 'HIVOrganizationExample3']",
+					"pm.variables.set('orgId', orgs[getRandomInt(0, 2)])",
+					"",
+					"const recencyTestConducted = ['Yes', 'No']",
+					"pm.variables.set('recencyTestConducted', recencyTestConducted[getRandomInt(0, 1)])",
+					"pm.variables.set('recencyTestConductedFhir', pm.variables.get('recencyTestConducted') === 'Yes')",
+					"",
+					"const recencyStatus = ['Recent', 'Not Recent']",
+					"pm.variables.set('recencyStatus', recencyStatus[getRandomInt(0, 1)])",
+					"pm.variables.set('recencyStatusFhir', pm.variables.get('recencyStatus') === 'Recent')",
+					"",
+					"if (Math.random() > 0.1) {",
+					"  pm.variables.set('artStartDate', moment(visitDate).add(getRandomInt(0, 10), 'days').format('YYYY-MM-DD'))",
+					"  pm.variables.set('artLine', 'First Line')",
+					"  pm.variables.set('artLineFhir', 'FIRST-LINE')",
+					"  pm.variables.set('artRegimen', 'TDF/3TC/DTG')",
+					"} else {",
+					"  pm.variables.set('artStartDate', '')",
+					"  pm.variables.set('artLine', '')",
+					"  pm.variables.set('artRegimen', '')",
+					"}",
+					"",
+					"const deathCauses = ['HIV Related', 'Non HIV related']",
+					"const deathCausesFhir = ['HIV', 'NON-HIV']",
+					"if (Math.random() > 0.9) {",
+					"  const deathDate = moment(visitDate).add(getRandomInt(5, 30), 'days')",
+					"  pm.variables.set('deathDate', deathDate.format('YYYY-MM-DD'))",
+					"  pm.variables.set('ageAtDeath', age)",
+					"  const deathIndex = getRandomInt(0, 1)",
+					"  pm.variables.set('deathCause', deathCauses[deathIndex])",
+					"  pm.variables.set('deathCauseFhir', deathCausesFhir[deathIndex])",
+					"  pm.variables.set('dateOfLastVisit', moment(visitDate).add(getRandomInt(240, 260), 'days').toISOString())",
+					"} else {",
+					"  pm.variables.set('deathDate', '')",
+					"  pm.variables.set('ageAtDeath', '')",
+					"  pm.variables.set('deathCause', '')",
+					"  pm.variables.set('dateOfLastVisit', '')",
+					"}",
+					"",
+					"const numCD4Counts = getRandomInt(0, 5)",
+					"let cd4Date = moment(visitDate)",
+					"let cd4Dates = []",
+					"let cd4Results = []",
+					"let cd4Percentages = []",
+					"for (let i = 0; i < numCD4Counts; i++) {",
+					"  cd4Dates.push(cd4Date.format('YYYY-MM-DD'))",
+					"  cd4Results.push(getRandomInt(0, 1200))",
+					"  cd4Percentages.push(getRandomInt(5, 65))",
+					"  cd4Date = moment(cd4Date).add(getRandomInt(30, 90), 'days')",
+					"}",
+					"// for csv only",
+					"pm.variables.set('cd4CollectionDates', cd4Dates.join('|'))",
+					"pm.variables.set('cd4Results', cd4Results.join('|'))",
+					"pm.variables.set('cd4Percentages', cd4Percentages.join('|'))",
+					"",
+					"// for fhir only",
+					"pm.variables.set('cd4CollectionDate1', cd4Dates[0] || '')",
+					"pm.variables.set('cd4Result1', cd4Results[0] || 0)",
+					"pm.variables.set('cd4Percentage1', cd4Percentages[0] || 0)",
+					"pm.variables.set('cd4CollectionDate2', cd4Dates[1] || '')",
+					"pm.variables.set('cd4Result2', cd4Results[1] || 0)",
+					"pm.variables.set('cd4Percentage2', cd4Percentages[1] || 0)",
+					"",
+					"const numRegSwitch = getRandomInt(0, 3)",
+					"const lines = ['First Line', 'Second Line', 'Third Line', 'Special/Unknown']",
+					"const linesFhir = ['FIRST-LINE','SECOND-LINE','THIRD-LINE','SPECIAL-UNKNOWN']",
+					"const regimens = ['TDF/3TC/DTG', 'TDF/3TC/EFV']",
+					"let switchDate = moment(visitDate)",
+					"let switchDates = []",
+					"let switchLines = []",
+					"let switchLinesFhir = []",
+					"let switchRegimens = []",
+					"for (let i = 0; i < numRegSwitch; i++) {",
+					"  switchDates.push(switchDate.format('YYYY-MM-DD'))",
+					"  switchLines.push(lines[i+1])",
+					"  switchLinesFhir.push(linesFhir[i+1])",
+					"  switchRegimens.push(regimens[getRandomInt(0, 1)])",
+					"  switchDate = moment(switchDate).add(getRandomInt(60, 240), 'days')",
+					"}",
+					"// for csv only",
+					"pm.variables.set('switchDates', switchDates.join('|'))",
+					"pm.variables.set('switchLines', switchLines.join('|'))",
+					"pm.variables.set('switchLinesFhir', switchLinesFhir.join('|'))",
+					"pm.variables.set('switchRegimens', switchRegimens.join('|'))",
+					"",
+					"// for fhir only",
+					"pm.variables.set('switchDate1', switchDates[0] || '')",
+					"pm.variables.set('switchLine1', switchLines[0] || '')",
+					"pm.variables.set('switchLineFhir1', switchLinesFhir[0] || '')",
+					"pm.variables.set('switchRegimen1', switchRegimens[0] || '')",
+					"",
+					"const numVL = getRandomInt(0, 5)",
+					"const interpretations = ['Detectable', 'Non Detectable', 'Unknown']",
+					"const interpretationsFhir = ['D', 'ND', 'UNK']",
+					"const currStatus = ['Suppressed', 'Unsuppressed', 'Unknown']",
+					"const currStatusFhir = ['S', 'UNSUP', 'UNK']",
+					"let vlDate = moment(visitDate)",
+					"let vlDates = []",
+					"let vlResults = []",
+					"let vlInterpretations = []",
+					"let vlInterpretationsFhir = []",
+					"for (let i = 0; i < numVL; i++) {",
+					"  vlDates.push(vlDate.format('YYYY-MM-DD'))",
+					"  vlResults.push(getRandomInt(10000, 100000))",
+					"  const interIndex = getRandomInt(0, 2)",
+					"  vlInterpretations.push(interpretations[interIndex])",
+					"  vlInterpretationsFhir.push(interpretationsFhir[interIndex])",
+					"  vlDate = moment(vlDate).add(getRandomInt(30, 90), 'days')",
+					"}",
+					"// for csv only",
+					"pm.variables.set('vlDates', vlDates.join('|'))",
+					"pm.variables.set('vlResults', vlResults.join('|'))",
+					"pm.variables.set('vlInterpretations', vlInterpretations.join('|'))",
+					"const currInterIndex = getRandomInt(0, 2)",
+					"pm.variables.set('currVLInterpretation', currStatus[currInterIndex])",
+					"pm.variables.set('currVLInterpretationFhir', currStatusFhir[currInterIndex])",
+					"",
+					"// for fhir only",
+					"pm.variables.set('vlDate1', vlDates[0] || '')",
+					"pm.variables.set('vlResult1', vlResults[0] || 0)",
+					"pm.variables.set('vlInterpretation1', vlInterpretations[0] || '')",
+					"pm.variables.set('vlInterpretationFhir1', vlInterpretationsFhir[0] || '')",
+					"pm.variables.set('vlDate2', vlDates[1] || '')",
+					"pm.variables.set('vlResult2', vlResults[1] || 0)",
+					"pm.variables.set('vlInterpretation2', vlInterpretations[1] || '')",
+					"pm.variables.set('vlInterpretationFhir2', vlInterpretationsFhir[0] || '')",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "openhimHost",
+			"value": "localhost:5001"
+		}
+	]
+}
