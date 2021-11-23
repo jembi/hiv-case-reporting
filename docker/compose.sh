@@ -4,8 +4,8 @@ composeFilePath=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 if [ "$1" == "init" ]; then
     # Update the opencr config
-    docker cp /instant/cdr/docker/importer/opencr/decisionRules.json opencr:/src/server/config/decisionRules.json
-    docker cp /instant/cdr/docker/importer/opencr/config_instant.json opencr:/src/server/config/config_instant.json
+    docker cp /instant/hiv-case-reporting/docker/importer/opencr/decisionRules.json opencr:/src/server/config/decisionRules.json
+    docker cp /instant/hiv-case-reporting/docker/importer/opencr/config_instant.json opencr:/src/server/config/config_instant.json
     sleep 5
     docker restart opencr
 
