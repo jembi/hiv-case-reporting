@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   # container for executing config import scripts for setting up initial config
-  core-config-importer:
+  hiv-case-reporting-config-importer:
     container_name: hiv-case-reporting-config-importer
     image: jembi/instantohie-config-importer
     restart: on-failure
