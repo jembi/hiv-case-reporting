@@ -16,14 +16,6 @@
     "test:csv": "yarn newman run 'CDR.postman_collection.json' --folder 'Submit random CSV'",
     "test:csv:1000": "yarn test:csv -n 1000",
     "test:bundle": "yarn newman run 'CDR.postman_collection.json' --folder 'Submit random bundle - full'",
-    "test:bundle:1000": "yarn test:bundle -n 1000",
-    "bootstrap:qa": "yarn bootstrap --env-var openhimHost=<OPENHIM HOST>",
-    "test:qa": "yarn test --env-var openhimHost=<OPENHIM HOST>",
-    "test:qa:1000": "yarn test:1000 --env-var openhimHost=<OPENHIM HOST>",
-    "bootstrap:stg": "yarn bootstrap --env-var openhimHost=<POENHIM HOST>",
-    "test:stg": "yarn test --env-var openhimHost=<OPENHIM HOST>",
-    "test:stg:1000": "yarn test:1000 --env-var openhimHost=<OPENHIM HOST>",
-    "loadtest": "yarn postman-to-k6 'Loadtest.postman_collection.json' -e Loadtest.postman_environment.json -s -o k6-config/k6-script.js && sed -i '/const moment/d' k6-config/k6-script.js && sed -i \"2i import moment from 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'\" k6-config/k6-script.js && docker run --add-host=host.docker.internal:host-gateway --rm -v `pwd`/k6-config:/k6-config loadimpact/k6 run /k6-config/k6-script.js -i 1000",
-    "loadtest:concurrent": "yarn loadtest --vus 8"
+    "test:bundle:1000": "yarn test:bundle -n 1000"
   }
 }
