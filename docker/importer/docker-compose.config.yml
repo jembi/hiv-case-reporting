@@ -48,11 +48,6 @@ services:
         "until nc -vz es-analytics 9200; do echo ES not running yet; sleep 1; done; curl -XPUT --fail-with-body 'http://es-analytics:9200/fhir-report-patient' -u elastic:${ES_ELASTIC-dev_password_only} -H 'Content-Type: application/json' -d@/instant/hiv-case-reporting/docker/importer/indexes/fhir-report-patient.json"
       ]
 
-  logstash:
-    volumes:
-      - logstash-pipeline:/usr/share/logstash/pipeline/
-      - logstash-config:/usr/share/logstash/config/
-
 volumes:
   instant:
     external: true
