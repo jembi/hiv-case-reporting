@@ -31,7 +31,7 @@ services:
       [
         'sh',
         '-c',
-        "until nc -vz kibana 5601; do echo Kibana not running yet; sleep 1; done; curl kibana:5601/api/saved_objects/_import?overwrite=true -u elastic:${ES_ELASTIC-dev_password_only} -H 'kbn-xsrf: true' --form file=@/instant/hiv-case-reporting/docker/kibana-export.ndjson"
+        "until nc -vz kibana 5601; do echo Kibana not running yet; sleep 1; done; curl kibana:5601/api/saved_objects/_import?overwrite=true -u elastic:${ES_ELASTIC-dev_password_only} -H 'kbn-xsrf: true' --form file=@/instant/hiv-case-reporting/docker/importer/kibana-export.ndjson"
       ]
 
   es-index-importer:
