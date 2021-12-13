@@ -4,8 +4,8 @@ composeFilePath=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 if [ "$1" == "init" ]; then
     # Update the opencr config
-    docker cp /instant/cdr/docker/importer/opencr/decisionRules.json opencr:/src/server/config/decisionRules.json
-    docker cp /instant/cdr/docker/importer/opencr/config_instant.json opencr:/src/server/config/config_instant.json
+    docker cp /instant/hiv-case-reporting/docker/importer/opencr/decisionRules.json opencr:/src/server/config/decisionRules.json
+    docker cp /instant/hiv-case-reporting/docker/importer/opencr/config_instant.json opencr:/src/server/config/config_instant.json
     sleep 5
     docker restart opencr
 
@@ -18,15 +18,16 @@ if [ "$1" == "init" ]; then
     docker cp "$composeFilePath"/importer/logstash.yml logstash-helper:/config/
     docker cp "$composeFilePath"/importer/pipelines.yml logstash-helper:/config/
     docker rm logstash-helper
-
-    docker-compose -p instant -f "$composeFilePath"/docker-compose.yml up -d
+    sleep 5
     docker restart logstash
+
+    docker-compose -p instant -f "$composeFilePath"/docker-compose.yml -f "$composeFilePath"/importer/docker-compose.config.yml up -d
 elif [ "$1" == "up" ]; then
     docker-compose -p instant -f "$composeFilePath"/docker-compose.yml up -d
 elif [ "$1" == "down" ]; then
     docker-compose -p instant -f "$composeFilePath"/docker-compose.yml stop
 elif [ "$1" == "destroy" ]; then
-    docker-compose -p instant -f "$composeFilePath"/docker-compose.yml down -v
+    docker-compose -p instant -f "$composeFilePath"/docker-compose.yml -f "$composeFilePath"/importer/docker-compose.config.yml down -v
 else
     echo "Valid options are: init, up, down, or destroy"
 fi

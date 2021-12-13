@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   # container for executing config import scripts for setting up initial config
-  core-config-importer:
+  hiv-case-reporting-config-importer:
     container_name: hiv-case-reporting-config-importer
     image: jembi/instantohie-config-importer
     restart: on-failure
@@ -18,7 +18,7 @@ services:
         source: instant
         target: /instant
     # This command will only attempt to import the OpenHIM config when the heartbeat responds with a 2xx
-    command: sh -c "wait-on -t 60000 https-get://core:8080/heartbeat && node /instant/hiv-case-reporting/docker/importer/volume/openhimConfig.js"
+    command: sh -c "wait-on -t 60000 https-get://openhim-core:8080/heartbeat && node /instant/hiv-case-reporting/docker/importer/volume/openhimConfig.js"
 
   kibana-config-importer:
     container_name: kibana-config-importer
@@ -31,7 +31,7 @@ services:
       [
         'sh',
         '-c',
-        "until nc -vz kibana 5601; do echo Kibana not running yet; sleep 1; done; curl kibana:5601/api/saved_objects/_import?overwrite=true -u elastic:${ES_ELASTIC-dev_password_only} -H 'kbn-xsrf: true' --form file=@/instant/hiv-case-reporting/docker/kibana-export.ndjson"
+        "until nc -vz kibana 5601; do echo Kibana not running yet; sleep 1; done; curl kibana:5601/api/saved_objects/_import?overwrite=true -u elastic:${ES_ELASTIC-dev_password_only} -H 'kbn-xsrf: true' --form file=@/instant/hiv-case-reporting/docker/importer/kibana-export.ndjson"
       ]
 
   es-index-importer:
@@ -47,11 +47,6 @@ services:
         '-c',
         "until nc -vz es-analytics 9200; do echo ES not running yet; sleep 1; done; curl -XPUT --fail-with-body 'http://es-analytics:9200/fhir-report-patient' -u elastic:${ES_ELASTIC-dev_password_only} -H 'Content-Type: application/json' -d@/instant/hiv-case-reporting/docker/importer/indexes/fhir-report-patient.json"
       ]
-
-  logstash:
-    volumes:
-      - logstash-pipeline:/usr/share/logstash/pipeline/
-      - logstash-config:/usr/share/logstash/config/
 
 volumes:
   instant:
